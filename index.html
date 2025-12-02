@@ -264,7 +264,8 @@
                     const encodedUrl = base64Encode(validatedUrl);
                     // 获取当前页面的基础路径
                     const basePath = window.location.pathname.split('/').slice(0, -1).join('/') + '/';
-                    const resultUrl = `${window.location.origin}${basePath}redirect.html?url=${encodedUrl}`;
+                    // 在index.html的generate函数中
+const resultUrl = `${window.location.origin}${window.location.pathname.replace('index.html', '')}ink.htm?c=${encodedUrl}`;
                     
                     // 显示结果
                     document.getElementById('output').textContent = resultUrl;
